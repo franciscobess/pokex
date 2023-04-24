@@ -9,7 +9,16 @@ import { BsStars } from "react-icons/bs";
 import { AiOutlinePlus, AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 
 const PokemonDataPage = () => {
-    const { selectedPokemon, setSelectedPokemonData, selectedPokemonData, myParty, setMyParty, setAlertModalVisibility, setAlertModalText, toStartCaseString, selectedPokemonIsShiny, setSelectedPokemonIsShiny } = useContext(PokemonListContext)
+    const { selectedPokemon,
+        setSelectedPokemonData,
+        selectedPokemonData,
+        myParty, setMyParty,
+        setAlertModalVisibility,
+        setAlertModalText,
+        toStartCaseString,
+        selectedPokemonIsShiny,
+        setSelectedPokemonIsShiny,
+    } = useContext(PokemonListContext)
     const API_BASE_URL = "https://pokeapi.co/api/v2"
 
     const hasPokemonDataAvailable = () => {
@@ -42,6 +51,8 @@ const PokemonDataPage = () => {
             }).catch((err) => {
                 console.error(`Erro fetching ${selectedPokemon.name} data: ${err}`)
             })
+
+        setSelectedPokemonIsShiny(false)
     }
 
     const selectPreviousPokemon = () => {
@@ -53,6 +64,8 @@ const PokemonDataPage = () => {
             }).catch((err) => {
                 console.error(`Erro fetching ${selectedPokemon.name} data: ${err}`)
             })
+
+        setSelectedPokemonIsShiny(false)
     }
 
     if (hasPokemonDataAvailable()) {
