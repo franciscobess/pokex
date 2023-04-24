@@ -10,5 +10,5 @@ The user also can view the pokemon shiny forms and create a team with the monste
 ![App Overview](readme_content/overview.gif)
 
 <h4 align="center"> 
-	🚧 Pokex 🚀 in development... 🚧
+	🚧 Pokex still in development... 🚧
 </h4>
