@@ -7,5 +7,5 @@ This application allows the user to search for pokemon information like decripti
 
 The user also can view the pokemon shiny forms and create a team with the monsters that he likes most.
 
-![Adding Pokemon to party](readme_content/add-to-party.gif)
-![Turn to shiny Pokemon](readme_content/add-to-party.gif)
+![Adding Pokemon to party](readme_content/add-to-party.webm)
+![Turn to shiny Pokemon](readme_content/add-to-party.webm)
