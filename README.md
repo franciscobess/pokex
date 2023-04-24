@@ -1,7 +1,7 @@
 # Pokex
 Pokex is a pokedex clone created using React and Tailwind. 
 
-The pokemon data are fetched from PokeAPI [a link](https://pokeapi.co/).
+The pokemon data are fetched from [PokeAPI](https://pokeapi.co/).
 
 This application allows the user to search for pokemon information like decription, types, abilities, etc.
 
