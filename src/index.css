@@ -1,0 +1,48 @@
+.centered-pokemon-img {
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.wrap-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.half-top {
+    border-bottom-left-radius: 45px;
+    border-bottom-right-radius: 45px;
+    border-top: 0;
+}
+
+.half-bottom {
+    border-top-left-radius: 45px;
+    border-top-right-radius: 45px;
+    border-bottom: 0;
+}
+
+.opacity-red-bg {
+    background-color: rgba(238, 21, 21, 0.7);
+}
+
+.pokeball-shadow {
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.modal {
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.poke-alert {
+    margin: 0 auto;
+}
+
+.centered-button {
+    margin: 0 auto;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
