@@ -12,8 +12,6 @@ const App = () => {
   const API_BASE_URL = "https://pokeapi.co/api/v2"
   const [pokemonList, setPokemonList] = useState([])
   const [selectedGeneration, setSelectedGeneration] = useState(1)
-  const [pokemonListLimit, setPokemonListLimit] = useState(151)
-  const [pokemonListOffset, setPokemonListOffset] = useState(0)
   const [selectedPokemon, setSelectedPokemon] = useState({})
   const [selectedPokemonIsShiny, setSelectedPokemonIsShiny] = useState(false)
   const [selectedPokemonData, setSelectedPokemonData] = useState({})
@@ -30,10 +28,6 @@ const App = () => {
     setPokemonList,
     selectedGeneration,
     setSelectedGeneration,
-    pokemonListLimit,
-    setPokemonListLimit,
-    pokemonListOffset,
-    setPokemonListOffset,
     selectedPokemon,
     setSelectedPokemon,
     selectedPokemonIsShiny,
@@ -56,7 +50,14 @@ const App = () => {
           pokemon.name = toStartCaseString(pokemon.name)
         })
 
-        setPokemonList(response.data.pokemon_species)
+        const tempPokemonList = response.data.pokemon_species
+
+        // adding id to the list based on pokemon url
+        tempPokemonList.map((pokemon) => {
+          pokemon.id = Number(pokemon.url.split("/")[6])
+        })
+
+        setPokemonList(_.sortBy(tempPokemonList, (pokemon) => pokemon.id))
       })
       .catch((err) => console.error(`Error connecting on API: ${err}`))
   }, [selectedGeneration]);
