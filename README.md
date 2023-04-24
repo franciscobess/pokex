@@ -8,3 +8,7 @@ This application allows the user to search for pokemon information like decripti
 The user also can view the pokemon shiny forms and create a team with the monsters that he likes most.
 
 ![App Overview](readme_content/overview.gif)
+
+<h4 align="center"> 
+	🚧 Pokex 🚀 in development... 🚧
+</h4>
