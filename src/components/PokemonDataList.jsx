@@ -3,7 +3,7 @@ import { PokemonListContext } from '../context/PokemonListContext'
 import _ from "lodash"
 
 const PokemonDataList = () => {
-    const { pokemonList, setSelectedGeneration, setSelectedPokemon, setSelectedPokemonData, setSelectedPokemonIsShiny } = useContext(PokemonListContext)
+    const { pokemonList, setSelectedGeneration, setSelectedPokemon, setSelectedPokemonData, selectedPokemonIsShiny, setSelectedPokemonIsShiny } = useContext(PokemonListContext)
 
     const selectPokemonHandler = (e) => {
         const pokemonName = e.target.value
@@ -11,7 +11,7 @@ const PokemonDataList = () => {
 
         if (pokemonMatch) {
             setSelectedPokemon(pokemonMatch)
-            setSelectedPokemonIsShiny(false)
+            if (selectedPokemonIsShiny) setSelectedPokemonIsShiny(false)
             setSelectedPokemonData({})
         }
     }
