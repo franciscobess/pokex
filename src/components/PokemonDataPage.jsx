@@ -26,20 +26,21 @@ const PokemonDataPage = () => {
     }
 
     const addSelectedPokemonToParty = () => {
-        const is_shiny = selectedPokemonIsShiny
-
-        if (!selectedPokemonData.is_shiny) {
-            setSelectedPokemonData(selectedPokemonData => ({
-                ...selectedPokemonData, is_shiny
-            }))
-        }
-
         if (myParty.length <= 5) {
             setMyParty(myParty.concat(selectedPokemonData))
         } else {
             setAlertModalVisibility(true)
             setAlertModalText("Cant have more than six pokemon on your party, buddy. Remove some pokemon of your team and try again.")
         }
+    }
+
+    const turnOnOffShiny = () => {
+        setSelectedPokemonIsShiny(!selectedPokemonIsShiny)
+        const is_shiny = !selectedPokemonIsShiny
+
+        setSelectedPokemonData(selectedPokemonData => ({
+            ...selectedPokemonData, is_shiny
+        }))
     }
 
     const selectNextPokemon = () => {
@@ -74,7 +75,7 @@ const PokemonDataPage = () => {
                 <div className="mt-5">
                     <h1 className="text-center text-3xl font-light">{selectedPokemonData.id} - {toStartCaseString(selectedPokemonData.name)}</h1>
                     <div className="z-0 bg-[#dedede] w-[300px] h-[300px] rounded-full centered-pokemon-img">
-                        <BsStars className="absolute text-[28px] text-amber-300 hover:cursor-pointer hover:scale-110" onClick={() => setSelectedPokemonIsShiny(!selectedPokemonIsShiny)} />
+                        <BsStars className="absolute text-[28px] text-amber-300 hover:cursor-pointer hover:scale-110" onClick={turnOnOffShiny} />
                         <AiOutlinePlus className="text-[28px] text-[#3c5aa6] hover:cursor-pointer float-right hover:scale-110 top-0" onClick={addSelectedPokemonToParty} />
 
                         <img
